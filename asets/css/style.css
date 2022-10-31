@@ -167,11 +167,19 @@ main #projects{
     position: relative;
 }
 
+.wrapper-cover-hover{
+    width: calc(200% + 1vw);
+    z-index: 1;
+}
+.cover-hover{
+    width: 100%;
+}
+
 .wrapper-cover .cover{
     position: absolute;
     top: 0;
     left: 0;
-    width: 200%
+    width: calc(200% + 1vw)
 }
 
 .wrapper-cover #cover-2{
