@@ -135,6 +135,7 @@ header #content #text #about{
 main{
     background-color: var(--color-4);
     padding-top: 7vw;
+                                                margin-bottom: 2vh
 }
 
 /* projects */
@@ -142,6 +143,8 @@ main{
 main #projects{
     width: 85vw;
     max-width: 900px;
+    height: 85vw;
+    max-height: 900px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -156,7 +159,7 @@ main #projects{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 1vw;
+    gap: .7vw;
     width: 100%;
     height: 100%;
 }
@@ -170,8 +173,8 @@ main #projects{
     transition: .5s;
 }
 .wrapper-cover.wrapper-cover-hover{
-    width: calc(200% + 1vw)!important;
-    height: calc(100% + 1vw)!important;
+    width: calc(150% + .7vw)!important;
+    height: calc(100% + .7vw)!important;
     z-index: 1;
 }
 
@@ -179,19 +182,12 @@ main #projects{
     position: absolute;
     top: 0;
     left: 0;
-    width: calc(200% + 1vw);
+    height: calc(100% + .7vw);
     transition: .5s;
 }
 .wrapper-cover .cover.cover-hover{
-    width: 100%;
-}
-
-.wrapper-cover #cover-2{
-    left: -50%;
-}
-
-.wrapper-cover #cover-3{
-    left: -100%;
+    width: auto;
+    height: calc(100% + 1vw);
 }
 
 .wrapper-cover #cover-5, .wrapper-cover #cover-6{

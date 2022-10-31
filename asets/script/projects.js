@@ -3,8 +3,24 @@ wrapperList = document.querySelectorAll('.wrapper-cover'),
 coverList = document.querySelectorAll('.cover');
 
 wrapperList.forEach((el, index)=>{
-    el.addEventListener('mouseenter', onEnter)
-    el.addEventListener('mouseout', onOut)
+    let
+    width = parseFloat(getComputedStyle(el).width),
+    left = el.offsetLeft;
+
+    el.addEventListener('mouseenter', onEnter);
+    el.addEventListener('mouseout', onOut);
+
+ 
+    if(left < width){
+        el.setAttribute('position', 'left')
+    }
+    else if(left > width){
+        el.setAttribute('position', 'right')
+    }
+    else{
+        console.log(left, typeof left, typeof width, width)
+        el.setAttribute('position', 'betwen')
+    }
 })
 
 function onEnter(e){
