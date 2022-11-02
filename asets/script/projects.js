@@ -3,9 +3,9 @@ gallery = document.querySelector('#projects #gallery'),
 wrapperList = document.querySelectorAll('.wrapper-cover'),
 coverList = document.querySelectorAll('.cover');
 
-    console.log(coverList[0])
 
 wrapperList.forEach((el, index)=>{
+    if(el.hasAttribute('coming-soon')) return
     let
     galleryWidth = gallery.offsetWidth,
     wrapperWidth = el.offsetWidth,
@@ -27,7 +27,6 @@ wrapperList.forEach((el, index)=>{
         el.setAttribute('position', 'between');
         coverList[index].classList.add('cover-btw');
     }
-        console.log(el)
 })
 
 function onEnter(e){
