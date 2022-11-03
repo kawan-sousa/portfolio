@@ -15,6 +15,12 @@
   --color-4: #1d203a;
 }
 
+h2{
+  text-transform: uppercase;
+  font-size: 3rem;
+  color: var(--color-0);
+}
+
 header {
   position: relative;
   height: 98vh;
@@ -150,9 +156,6 @@ main #projects {
 }
 
 #projects h2 {
-  font-size: 3rem;
-  color: var(--color-0);
-  text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
@@ -234,4 +237,36 @@ main #projects {
     height: calc(100% + 0.7vw + 0.7vw)!important;
     transform: translate(-0.7vw, -0.7vw);
     z-index: 1;
+}
+
+/* skills */
+
+.skills{
+  background-color: var(--color-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills h2{
+  transform: translateY(-50%);
+  color: var(--color-0);
+  font-size: 3rem
+}
+
+.skill-wrapper{
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+  margin: 4vw 0;
+}
+
+.skill-wrapper .skill{
+  cursor: pointer;
+  filter: grayscale(100%);
+  transition-duration: .5s;
+}
+
+.skill-wrapper .skill:hover{
+  filter: grayscale(0);
 }
