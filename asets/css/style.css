@@ -13,6 +13,8 @@
   --color-2: #ff8600;
   --color-3: #bcbcbc;
   --color-4: #1d203a;
+  --color-5: #FFC30D;
+  --color-6: #414141;
 }
 
 h2{
@@ -256,17 +258,76 @@ main #projects {
 
 .skill-wrapper{
   display: flex;
-  align-items: center;
-  column-gap: 2rem;
+  column-gap: 2vw;
   margin: 4vw 0;
+  height: 10vw
 }
 
-.skill-wrapper .skill{
+.skill, .skill img{
+  height: 100%
+}
+
+.skill{
   cursor: pointer;
   filter: grayscale(100%);
-  transition-duration: .5s;
+  transition: .4s;
 }
 
-.skill-wrapper .skill:hover{
-  filter: grayscale(0);
+.skill:hover{
+  filter: grayscale(0%);
+}
+
+.skill p{
+  transition: .4s;
+  color: transparent;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 200;
+  text-transform: capitalize;
+}
+
+.skill:hover p{
+  color: var(--color-0);
+}
+
+aside.contact{
+  display: flex;
+}
+
+aside.contact .make-contact{
+  background-color: var(--color-5);
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.make-contact h3{
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-top: 5vw;
+  margin-bottom: 1.5vw;
+}
+
+.contact-form{
+  width: 50%;
+}
+
+.contact-form .field-item{
+  background-color: rgba(128, 128, 128, 0.245);
+  display: flex;
+  flex-direction: column;
+  margin: .5vw;
+}
+
+.field-item .field-name{
+  font-size: 1.1rem;
+  color: var(--color-6);
+  text-transform: capitalize;
+  transform: translateY(1.1rem);
+}
+
+.field-item .field-inpt{
+  padding: .8rem;
+  font-size: 1rem;
 }
