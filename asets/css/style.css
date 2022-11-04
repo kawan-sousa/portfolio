@@ -13,14 +13,16 @@
   --color-2: #ff8600;
   --color-3: #bcbcbc;
   --color-4: #1d203a;
-  --color-5: #FFC30D;
-  --color-6: #414141;
 }
 
 h2{
   text-transform: uppercase;
   font-size: 3rem;
   color: var(--color-0);
+}
+
+input:focus{
+  outline: none;
 }
 
 header {
@@ -258,21 +260,18 @@ main #projects {
 
 .skill-wrapper{
   display: flex;
-  column-gap: 2vw;
+  align-items: center;
+  column-gap: 2rem;
   margin: 4vw 0;
-  height: 10vw
 }
 
-.skill, .skill img{
-  height: 100%
-}
-
-.skill{
+.skill-wrapper .skill{
   cursor: pointer;
   filter: grayscale(100%);
-  transition: .4s;
+  transition-duration: .5s;
 }
 
+<<<<<<< HEAD
 .skill:hover{
   filter: grayscale(0%);
 }
@@ -320,14 +319,62 @@ aside.contact .make-contact{
   margin: .5vw;
 }
 
+.field-inner{
+  width: 100%;
+  position: relative
+}
+
+.field-item{
+  width: 100%;
+}
+
 .field-item .field-name{
+  position: absolute;
   font-size: 1.1rem;
   color: var(--color-6);
   text-transform: capitalize;
-  transform: translateY(1.1rem);
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+}
+
+.field-item.focus .field-name{
+  top: 0;
+  color: #1d203a;
 }
 
 .field-item .field-inpt{
-  padding: .8rem;
+  width: 100%;
+  padding: .8rem 0;
   font-size: 1rem;
+  border: var(--border-1);
+  
+}
+
+.field-item .field-inpt:nth-child(3n){
+  background-color: red;
+}
+
+/* setings of custom borders */
+
+.border{
+  position: absolute;
+}
+
+.border-1 .border-top{
+  top: -1px;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(to right, var(--color-4) 0%,  var(--color-4) 25%, transparent 25%, transparent 100%);
+}
+
+.border-1 .border-rigth{
+  top: -1px;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(to right, var(--color-4) 0%,  var(--color-4) 25%, transparent 25%, transparent 100%);
+=======
+.skill-wrapper .skill:hover{
+  filter: grayscale(0);
+>>>>>>> parent of 68613d0 (start contact 'css')
 }
