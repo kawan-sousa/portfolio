@@ -329,6 +329,8 @@ aside.contact-me{
 .form-field{
   position: relative;
   width: 100%;
+  padding-left: .5rem;
+  padding-right: .2rem;
 }
 
 .form-field .form-lbl{
@@ -354,7 +356,8 @@ aside.contact-me{
   top: 0;
   left: 8%;
   font-size: 1rem;
-  color: var(--color-4)
+  color: var(--color-4);
+  transition-duration: .3s;
 }
 
 .form-field .form-npt{
