@@ -106,56 +106,56 @@
           <h3>contate-me</h3>
           <form action="#" class="contact-form">
             <div class="form-item" id="form-name">
-              <div class="form-field focus">
-                <label for="npt-name" class="form-lbl " id="lbl-name">name</label>
+              <div class="form-field">
+                <label for="npt-name" class="form-lbl " id="lbl-name">nome*</label>
                 <input type="text" class="form-npt" id="npt-name">
                 <div class="border border-tp1 border-top"></div>
                 <div class="border border-tp1 border-right"></div>
                 <div class="border border-tp1 border-bottom"></div>
                 <div class="border border-tp1 border-left"></div>
               </div>
-              <span class="field-error" id="field-error-name">error on field</span>
+              <div class="field-error" id="field-error-name">não são aceitos caracteres especiais no nome</div>
             </div>
             
             <div class="form-item" id="form-mail">
               <div class="form-field">
-                <label for="npt-mail" class="form-lbl " id="lbl-mail">e-mail</label>
+                <label for="npt-mail" class="form-lbl " id="lbl-mail">e-mail*</label>
                 <input type="text" class="form-npt" id="npt-mail">
                 <div class="border border-tp2 border-top"></div>
                 <div class="border border-tp2 border-right"></div>
                 <div class="border border-tp2 border-bottom"></div>
                 <div class="border border-tp2 border-left"></div>
               </div>
-              <span class="field-error" id="field-error-mail">error on field</span>
+              <div class="field-error" id="field-error-mail">formato de e-mail inválido</div>
             </div>
             
             <div class="form-item" id="form-subject">
               <div class="form-field">
-                <label for="npt-subject" class="form-lbl " id="lbl-subject">assunto</label>
+                <label for="npt-subject" class="form-lbl " id="lbl-subject">assunto*</label>
                 <input type="text" class="form-npt" id="npt-subject">
                 <div class="border border-tp3 border-top"></div>
                 <div class="border border-tp3 border-right"></div>
                 <div class="border border-tp3 border-bottom"></div>
                 <div class="border border-tp3 border-left"></div>
               </div>
-              <span class="field-error" id="field-error-subject">error on field</span>
+              <div class="field-error" id="field-error-subject">minimo de 7 caracteres neste campo</div>
             </div>
             
             <div class="form-item" id="form-text">
               <div class="form-field">
-                <label for="npt-text" class="form-lbl " id="lbl-text">mensagem</label>
+                <label for="npt-text" class="form-lbl " id="lbl-text">mensagem*</label>
                 <textarea name="" class="form-npt" id="npt-text" cols="30" rows="100"></textarea>
                 <div class="border border-tp4 border-top"></div>
                 <div class="border border-tp4 border-right"></div>
                 <div class="border border-tp4 border-bottom"></div>
                 <div class="border border-tp4 border-left"></div>
               </div>
-              <span class="field-error" id="field-error-text">error on field</span>
+              <div class="field-error" id="field-error-text">minimo de 20 caracteres no texto</div>
             </div>
 
             <div class="form-item" id="form-submit">
               <input type="submit" class="form-npt" id="npt-submit">
-              <span class="field-error" id="field-error-submit">error on field</span>
+              <div class="field-error" id="field-error-submit">error on field</div>
             </div>
           </form>
 

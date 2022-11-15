@@ -623,8 +623,14 @@ aside.contact-me{
 .field-error{
   color: red;
   font-weight: 500;
+  font-size: 1rem;
   letter-spacing: .05rem;
+  margin-bottom: 1vw;
   opacity: 0;
+}
+
+.active.field-error{
+  opacity: 1;
 }
 
 .field-error::after{
@@ -639,7 +645,9 @@ aside.contact-me{
   font-weight: bold;
   text-transform: uppercase; 
 }
-
+#npt-submit:focus{
+  filter: brightness(110%);
+}
 #npt-submit:active{
   filter: contrast(150%);
 
