@@ -11,6 +11,13 @@ errorMsgLst = {
     mail: "formato de e-mail inválido!",
     subject: "minimo de 7 caracteres neste campo!",
     text: "minimo de ao menos 30 caracteres no texto!"
+},
+form = document.querySelector('.contact-form');
+var formData= {
+    name: '',
+    mail: '',
+    subject: '',
+    text:''
 }
 
 inputLst.splice(-1)
@@ -60,17 +67,29 @@ function tstName(nptEl, frmField){ //using regular expressions tests if the fiel
 
 const submitInptEl = document.querySelector('#npt-submit');
 
-submitInptEl.addEventListener('click', onSubmit);
+form.addEventListener('submit', onSubmit);
 
 function onSubmit(e){
+    e.preventDefault();
     const formIsVld = checkFormValidity();
 
-    if(formIsVld)return;
-    else{
-        e.preventDefault();
-        e.target.closest('.form-item').classList.add('invalid')
+    if(!formIsVld){
+        document.querySelector('#form-submit').classList.add('invalid');
+
+        }
+        
+        //using an API sends an email to the site 
+        console.log(formData.subject, formData.name, formData.mail)
+        Email.send({
+            SecureToken : "7ac091d0-b742-4428-80bc-c9ea06a953fd",
+            To : ' kawansousa.dev@gmail.com',
+            From : 'kawansousa.dev@gmail.com',
+            Subject : formData.subject,
+            Body : 'teste de texto'
+        }).then(
+          message => alert(message)
+        );
     }
-}
 
 function checkFormValidity(){
     let validity = true;
@@ -79,6 +98,8 @@ function checkFormValidity(){
         value = el.value,
         elName = el.id.substring(4),
         regEx = new RegExp(regExLst[elName])
+
+        formData[elName] = value;
 
         if(!regEx.test(value)){
             validity = false;
