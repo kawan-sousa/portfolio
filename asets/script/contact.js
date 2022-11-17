@@ -2,7 +2,7 @@ const
 inputLst = [].slice.call(document.querySelectorAll('.form-npt')),
 regExLst = {
     name: /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/,
-    mail: /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+    mail: /^[a-z0-9.]+@[a-z]+\.[a-z]{2,3}/,
     subject: /^.{7,1000}$/,
     text: /^.{30,1000}$/
 },
@@ -78,14 +78,20 @@ function onSubmit(e){
 
         }
         
-        //using an API sends an email to the site 
-        console.log(formData.subject, formData.name, formData.mail)
+        //usando uma API envia um e-mail para o dono do site
         Email.send({
-            SecureToken : "7ac091d0-b742-4428-80bc-c9ea06a953fd",
-            To : ' kawansousa.dev@gmail.com',
-            From : 'kawansousa.dev@gmail.com',
-            Subject : formData.subject,
-            Body : 'teste de texto'
+            Host : "smtp.elasticemail.com",
+            Username : "kawansousa.dev@gmail.com",
+            Password : "578C9527F8F8A097FD66969B0261C8DA4A04",
+            To : 'kawansousa.dev@gmail.com',
+            From : "kawansousa.dev@gmail.com",
+            Subject : "contact using form portifolio",
+            Body : `<b>name: </b>${formData.name}
+                    <br>
+                    <b>e-mail: </b>${formData.mail}
+                    <br>
+                    <b>subject: </b>${formData.subject}
+                    <br>` + formData.text
         }).then(
           message => alert(message)
         );
