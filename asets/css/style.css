@@ -149,7 +149,6 @@ header #content #text #about {
 main {
   background-color: var(--color-4);
   padding-top: 7vw;
-  margin-bottom: 2vh;
 }
 
 /* projects */
@@ -705,4 +704,30 @@ aside.contact-me{
 
 .social-network-wrpr img:hover{
   filter: invert(1);
+}
+
+/* footer */
+footer{
+  background-color: var(--color-4);
+  padding: 1vw 0;
+  display: flex;
+  align-items: baseline;
+}
+
+footer .logotipo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3vw;
+  max-width: 3vw;
+  margin: 0 1vw;
+}
+
+footer .logotipo img{
+  height: 100%;
+}
+
+footer .copy-alert{
+  color: var(--color-0);
+  opacity: .8;
 }

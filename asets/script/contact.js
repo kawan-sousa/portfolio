@@ -79,7 +79,7 @@ function onSubmit(e){
         }
         
         //usando uma API envia um e-mail para o dono do site
-        Email.send({
+        Email.send({ 
             Host : "smtp.elasticemail.com",
             Username : "kawansousa.dev@gmail.com",
             Password : "578C9527F8F8A097FD66969B0261C8DA4A04",
