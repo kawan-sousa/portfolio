@@ -201,26 +201,12 @@ main #projects {
     z-index: 1;
 }
 
-.wrapper-cover .cover-lft {
+.wrapper-cover .cover-lft,.wrapper-cover .cover-btw,.wrapper-cover .cover-rgt{
   position: absolute;
   top: 0;
   left: 0;
   height: calc(100% + 0.7vw);
   transition: 0.5s;
-}
-.wrapper-cover .cover-btw{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: calc(100% + 0.7vw);
-    transition: 0.5s;
-}
-.wrapper-cover .cover-rgt{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: calc(100% + 0.7vw);
-    transition: 0.5s;
 }
 
 .wrapper-cover .cover-lft.cover-hover {
@@ -700,6 +686,7 @@ aside.contact-me{
 .social-network-wrpr img{
   width: 2vw;
   cursor: pointer;
+  transition: .3s;
 }
 
 .social-network-wrpr img:hover{

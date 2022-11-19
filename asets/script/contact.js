@@ -73,11 +73,7 @@ function onSubmit(e){
     e.preventDefault();
     const formIsVld = checkFormValidity();
 
-    if(!formIsVld){
-        document.querySelector('#form-submit').classList.add('invalid');
-
-        }
-        
+    if(formIsVld){
         //usando uma API envia um e-mail para o dono do site
         Email.send({ 
             Host : "smtp.elasticemail.com",
@@ -96,6 +92,12 @@ function onSubmit(e){
           message => alert(message)
         );
     }
+    else{
+        document.querySelector('#form-submit').classList.add('invalid');
+    }
+        
+
+}
 
 function checkFormValidity(){
     let validity = true;

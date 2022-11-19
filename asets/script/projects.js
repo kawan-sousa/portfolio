@@ -63,6 +63,8 @@ function onOut(e){
     coverEl = element.querySelector('.cover'),
     position = element.getAttribute('position');
 
+    coverEl.style = 'z-index: 1;';
+    setTimeout(()=>{coverEl.style = ''}, '500')
     if(!element.hasAttribute('coming-soon')){
         switch(position){
             case 'left':
