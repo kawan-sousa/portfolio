@@ -24,8 +24,6 @@ function onEnter(e){
             currentWpprEl.classList.add('hover-rgt');
             break;
     }
-    
-
 }
 
 function onOut(){
