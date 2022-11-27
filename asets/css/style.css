@@ -108,7 +108,9 @@ header #content .wrapper-picture {
 
 header #content .wrapper-picture picture {
   width: 20vw;
+  min-width: 205px;
   height: 20vw;
+  min-height: 205px;
   overflow: hidden;
   border-radius: 50%;
   transform: translateY(-50%);
@@ -233,7 +235,8 @@ main #projects {
 .skill-wrapper{
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-wrap: wrap;
   padding-bottom: 2vw;
 }
 
@@ -243,7 +246,8 @@ main #projects {
   align-items: center;
   filter: grayscale(100%);
   transition-duration: .4s;
-  width: fit-content;
+  height:fit-content;
+  margin: 0 4vw;
   white-space: nowrap;
 }
 
@@ -252,7 +256,8 @@ main #projects {
 }
 
 .skill img{
-  height: 8vw
+  height: 6vw;
+  min-height: 65px;
 }
 
 .skill p{
@@ -292,6 +297,7 @@ aside.contact-me{
 
 .contact-form{
   width: 45%;
+  min-width: 280px;
 }
 
 .form-item{
@@ -320,10 +326,6 @@ aside.contact-me{
   cursor: text;
 }
 
-.form-field .form-lbl{
-  top: 1.1rem;
-}
-
 .focus .form-lbl{
   top: 0;
   left: 8%;
@@ -335,6 +337,7 @@ aside.contact-me{
 .form-field .form-npt{
   width: 100%;
   height: 3vw;
+  min-height: 31px;
   border: none;
   background-color: transparent;
   font-size: 1.1rem;
@@ -662,15 +665,21 @@ aside.contact-me{
 }
 
 .social-network-wrpr{
-  margin-top: 4vh;
+  margin-top: 1vw;
   width: 100%;
   display: flex;
   justify-content: center;
   column-gap: 4%;
 }
 
+.social-network-wrpr > a{
+  width: 3vw;
+  max-width: 30px;
+  min-width: 25px;
+}
+
 .social-network-wrpr img{
-  width: 2vw;
+  width: 100%;
   cursor: pointer;
   transition: .3s;
 }
@@ -683,21 +692,7 @@ aside.contact-me{
 footer{
   background-color: var(--color-4);
   padding: 1vw 0;
-  display: flex;
-  align-items: baseline;
-}
-
-footer .logotipo{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 3vw;
-  max-width: 3vw;
-  margin: 0 1vw;
-}
-
-footer .logotipo img{
-  height: 100%;
+  text-align: center;
 }
 
 footer .copy-alert{
@@ -716,5 +711,12 @@ footer .copy-alert{
 @media (max-width: 800px){
   header #content #text #about{
     width: 90%;
+  }
+  .contact-image{
+    display: none;
+  }
+  .form-wrapper{
+    width: 100%;
+    padding-bottom: 1vw;
   }
 }
