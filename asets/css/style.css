@@ -704,7 +704,10 @@ footer .copy-alert{
   #gallery .wrapper-out:last-child{
     grid-column: span 2;
     width: calc(50% - .7vw);
-    height: 350px;
+  }
+  
+  .wppr-out-coming-soon{
+    display: none;
   }
 }
 
