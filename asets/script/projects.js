@@ -11,6 +11,7 @@ innerWpprList.forEach((el)=>{
 })
 
 function onEnter(e){
+    if(window.matchMedia('(max-width: 800px)').matches) return;
     currentWpprEl = e.target;
     
     switch(checkPosition()){
@@ -27,6 +28,7 @@ function onEnter(e){
 }
 
 function onOut(){
+    if(window.matchMedia('(max-width: 800px)').matches) return;
     const transitionDeleyStrg = window.getComputedStyle(currentWpprEl).getPropertyValue('transition-delay'),
     wrapperOut = currentWpprEl.closest('.wrapper-out');
 
