@@ -7,6 +7,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
 :root {
   --color-0: #fff;
   --color-1: #000;
@@ -95,12 +96,15 @@ header #links .logo {
   flex-direction: column;
   justify-content: space-between;
   width: 4vw;
-  height: 3.5vw;
+  min-width: 20px;
+  height: 3vw;
+  min-height: 15px;
   margin: 0 5vw;
   position: relative;
+  cursor: pointer;
 }
 
-#menu-button .burger-line{
+.burger-line{
   width: 100%;
   height: 2px;
   border-radius: 2px;
@@ -119,6 +123,7 @@ header #links .logo {
 
 #menu-button #burger-line-2{
   bottom: 50%;
+  transform: translateY(50%)
 }
 
 #menu-button #burger-line-3{ 
@@ -771,7 +776,7 @@ footer .copy-alert{
   }
   #menu-button.open #burger-line-2{
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateX(-50px);
   }
   #menu-button.open #burger-line-3{
     bottom: 50%;
@@ -807,6 +812,18 @@ footer .copy-alert{
     display: none!important;
   }
 
+  .skill{
+    filter: none;
+  }
+  
+  .skill p{
+    color: var(--color-0);
+    font-size: 1.5;
+    font-weight: 400;
+  }
+  .skill-wrapper{
+    row-gap: 5vw;
+  }
 }
 
 @media (max-width: 742px){
