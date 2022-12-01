@@ -349,8 +349,6 @@ aside.contact-me{
 .form-field{
   position: relative;
   width: 100%;
-  padding-left: .5rem;
-  padding-right: .2rem;
 }
 
 .form-field .form-lbl{
@@ -376,22 +374,28 @@ aside.contact-me{
   transition-duration: .3s;
 }
 
-.form-field .form-npt{
-  width: 100%;
+.form-npt{
+  width: calc(100% - .5vw);
   height: 3vw;
   min-height: 31px;
   border: none;
   background-color: transparent;
   font-size: 1.1rem;
 }
-.form-field .form-npt#npt-text{
+.form-npt{
+  padding-left: .5vw;
+}
+#form-submit .form-npt{
+  border: 2px solid var(--color-1);
+  padding: 0;
+}
+.form-npt#npt-text{
   height: 7vw;
-  padding: .5rem 0;
+  padding-top: .1rem;
   resize: vertical;
 
 }
-#npt-text:focus{
-  
+#npt-text:focus{ 
   outline: none;
 }
 
@@ -656,12 +660,8 @@ aside.contact-me{
     var(--color-1) 100%
   );
 }
-.form-item.invalid .border{
-  background-image: none!important;
-}
 
 .field-error{
-  text-transform: unset;
   color: red;
   font-weight: 500;
   font-size: 1rem;
@@ -679,7 +679,6 @@ aside.contact-me{
 
 #npt-submit{
   width: 40%;
-  padding: .7vw;
   background-color: var(--color-5);
   cursor: pointer;
   font-weight: bold;
@@ -823,6 +822,14 @@ footer .copy-alert{
   }
   .skill-wrapper{
     row-gap: 5vw;
+  }
+
+  .form-field .border-top, .form-field .border-right, .form-field .border-bottom, .form-field .border-left{
+    display: none;
+  }
+
+  .form-npt{
+    border: 2px solid var(--color-1);
   }
 }
 

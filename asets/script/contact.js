@@ -38,10 +38,10 @@ function onFocus(e){
 function outFocus(e){
     if(e.target.id == 'npt-submit') return;
     const inptEl = e.target,
-    formField = e.target.closest('.form-field');
+    formField = inptEl.closest('.form-field');
 
     tstName(inptEl, formField);
-    if(e.target.value.length > 0) return;
+    if(inptEl.value.length > 0) return;
     formField.classList.remove('focus');
 }
 
