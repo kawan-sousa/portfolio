@@ -158,11 +158,11 @@ header #content .wrapper-picture picture {
   transform: translateY(-50%);
 }
 
-header #content .wrapper-picture picture img {
+.wrapper-picture picture img {
   height: 100%;
 }
 
-header #content #text {
+header #text {
   position: absolute;
   bottom: 0;
   height: calc(98vh / 3);
@@ -170,16 +170,16 @@ header #content #text {
   color: var(--color-0);
 }
 
-header #content #text h1 {
+h1{
   font-size: 4rem;
   line-height: 4rem;
   text-transform: uppercase;
   margin-top: -2rem;
+  margin-bottom: 3vw;
   text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-  margin-bottom: 3rem;
 }
 
-header #content #text #about {
+#about {
   display: inline-block;
   width: 60%;
   color: var(--color-3);
@@ -382,13 +382,27 @@ aside.contact-me{
   background-color: transparent;
   font-size: 1.1rem;
 }
-.form-npt{
+.form-npt:not(#npt-submit){
   padding-left: .5vw;
 }
-#form-submit .form-npt{
+
+#npt-submit{
   border: 2px solid var(--color-1);
-  padding: 0;
+  width: 40%;
+  background-color: var(--color-5);
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase; 
+  border-radius: 30vw;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
+#npt-submit:focus, #npt-submit:hover{
+  filter: brightness(110%);
+}
+#npt-submit:active{
+  filter: contrast(150%);
+}
+
 .form-npt#npt-text{
   height: 7vw;
   padding-top: .1rem;
@@ -677,21 +691,6 @@ aside.contact-me{
   opacity: 1;
 }
 
-#npt-submit{
-  width: 40%;
-  background-color: var(--color-5);
-  cursor: pointer;
-  font-weight: bold;
-  text-transform: uppercase; 
-}
-#npt-submit:focus{
-  filter: brightness(110%);
-}
-#npt-submit:active{
-  filter: contrast(150%);
-
-}
-
 .contact-image{
   width: 40%;
   overflow: hidden;
@@ -753,7 +752,7 @@ footer .copy-alert{
 
 @media all and (max-width: 800px){
   header #content #text #about{
-    width: 90%;
+    width: 95%;
   }
   .contact-image{
     display: none;
@@ -836,5 +835,11 @@ footer .copy-alert{
 @media (max-width: 742px){
   #gallery{
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 481px){
+  h1{
+    font-size: 12vw;
   }
 }
