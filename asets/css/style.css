@@ -678,7 +678,7 @@ aside.contact-me{
 .field-error{
   color: red;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: .95rem;
   letter-spacing: .05rem;
   margin-bottom: 1vw;
   opacity: 0;
@@ -734,9 +734,15 @@ footer{
   text-align: center;
 }
 
-footer .copy-alert{
+.footer-txt{
   color: var(--color-0);
   opacity: .8;
+}
+#slogan{
+  font-size: .9rem;
+}
+
+@media (min-width: 1210px){
 }
 
 @media (max-width: 1121px){
