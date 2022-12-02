@@ -156,6 +156,16 @@ header #content .wrapper-picture picture {
   overflow: hidden;
   border-radius: 50%;
   transform: translateY(-50%);
+  animation: show-from-right .4s ease;
+}
+/*initial animation of header image */
+@keyframes show-from-right{
+  0%{
+    transform: translate(60vw, -50%);
+  }
+  100%{
+    transform: translateX(0, 0);
+  }
 }
 
 .wrapper-picture picture img {
@@ -174,9 +184,19 @@ h1{
   font-size: 4rem;
   line-height: 4rem;
   text-transform: uppercase;
-  margin-top: -2rem;
+  transform: translate(0, -2rem);
   margin-bottom: 3vw;
   text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  animation: show-from-left .5s ease;
+}
+/*initial animation of heading */
+@keyframes show-from-left{
+  0%{
+    transform: translate(-60vw, -2rem);
+  }
+  100%{
+    transform: translate(0, -2rem);
+  }
 }
 
 #about {
