@@ -96,9 +96,9 @@ header #links .logo {
   flex-direction: column;
   justify-content: space-between;
   width: 4vw;
-  min-width: 20px;
+  min-width: 25px;
   height: 3vw;
-  min-height: 15px;
+  min-height: 20px;
   margin: 0 5vw;
   position: relative;
   cursor: pointer;
@@ -839,6 +839,9 @@ footer .copy-alert{
 }
 
 @media (max-width: 481px){
+  header{
+    height: 90vh;
+  }
   h1{
     font-size: 12vw;
   }
