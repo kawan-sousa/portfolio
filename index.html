@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="asets/css/style.css" />
+    <link rel="stylesheet" href="asets/css/style.css"/>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <title>Kawan Sousa - desenvolvedor de sites</title>
   </head>
@@ -30,12 +30,12 @@
       </div>
       <div id="content">
         <div class="wrapper-picture"><!-- usado para que a imagem esteja sempre alinhada com o topo deste elemento -->
-          <picture>
+          <picture data-animation="show">
             <img src="asets/images/image 3.jpg" alt="foto de perfil" title="uma imagem do seu desenvolvedor favorito"/>
           </picture>
         </div>
         <div id="text">
-          <h1>kawan sousa</h1>
+          <h1 data-animation="show">kawan sousa</h1>
           <p id="about">
             Moro no Brasil, sou desenvolvedor web, atuando especificamente atualmente na area front-end, 
             tenho conhecimentos em HTML CSS e javaScript. Sou uma pessoa baste proficional e detalista 
@@ -108,23 +108,23 @@
         <h2>skills</h2>
 
         <div class="skill-wrapper">
-          <div class="skill">
+          <div class="skill" data-animation="left">
             <img src="asets/icons/canva-ico.svg" alt="canva">
             <p>canva</p>
           </div>
-          <div class="skill">
+          <div class="skill" data-animation="left">
             <img src="asets/icons/css3-ico.svg" alt="CSS3">
             <p>CSS 3</p>
           </div>
-          <div class="skill">
+          <div class="skill" data-animation="show">
             <img src="asets/icons/html5-ico.svg" alt="HTML5">
             <p>HTML 5</p>
           </div>
-          <div class="skill">
+          <div class="skill" data-animation="right">
             <img src="asets/icons/js-ico.svg" alt="java script">
             <p>javaScript</p>
           </div>
-          <div class="skill">
+          <div class="skill" data-animation="right">
             <img src="asets/icons/figma-ico.svg" alt="figma">
             <p>figma</p>
           </div>
@@ -190,16 +190,16 @@
           </form>
 
           <div class="social-network-wrpr">
-            <a href="https://www.instagram.com/_kawan.062/" target="_blank"  class="social-network">
+            <a data-animation="show" href="https://www.instagram.com/_kawan.062/" target="_blank"  class="social-network">
               <img src="asets/icons/instagram-ico.svg" alt="instagram icone" title="Vejá minhas publicações e aproveite para enviar um direct no instagram">
             </a>
-            <a href="https://www.linkedin.com/in/kawan-sousa-alves-b13108251/" target="_blank" class="social-network">
+            <a data-animation="show" href="https://www.linkedin.com/in/kawan-sousa-alves-b13108251/" target="_blank" class="social-network">
               <img src="asets/icons/linkedin-ico.svg" alt="linkedin icone" title="Acesse meu perfil no linkedin">
             </a>
-            <a href="https://api.whatsapp.com/send?phone=5562994434306&text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20um%20pouco%20mais%20sobre%20seu%20trabalho." target="_blank" class="social-network">
+            <a data-animation="show" href="https://api.whatsapp.com/send?phone=5562994434306&text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20um%20pouco%20mais%20sobre%20seu%20trabalho." target="_blank" class="social-network">
               <img src="asets/icons/whatsapp-ico.svg" alt="whatsapp icone" title="Entre em contato através do whatsapp">
             </a>
-            <a href="https://github.com/K-KawanSousa" target="_blank" class="social-network">
+            <a data-animation="show" href="https://github.com/K-KawanSousa" target="_blank" class="social-network">
               <img src="asets/icons/github-ico.svg" alt="github icone" title="Acesse meus repositórios no github">
             </a>
           </div>
@@ -218,4 +218,5 @@
   <script src="asets/script/contact.js"></script>
   <script src="asets/script/main.js"></script>
   <script src="asets/script/mobileMenu.js"></script>
+  <script src="asets/script/animations.js" media="(min-width: 800px)"></script>
 </html>
