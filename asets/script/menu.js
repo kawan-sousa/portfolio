@@ -1,4 +1,5 @@
 var
+    menuLinks = document.querySelector('#links')
     menuButton = document.querySelector('#menu-button'),
     menuNav = document.querySelector('#menu-nav');
 
@@ -22,3 +23,10 @@ function resetMenu(){
     menuButton.classList.remove('open');
     menuNav.classList.remove('open')
 }
+
+// on scroll this script check if is to show or hidde menu
+window.onscroll = function(e) {
+    if(this.oldScroll < this.scrollY) menuLinks.classList.add('hidde');
+    else menuLinks.classList.remove('hidde');
+    this.oldScroll = this.scrollY;
+  }
