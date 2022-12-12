@@ -12,9 +12,9 @@ function addListenes(){
 
 function onClick(e){
     menuButton.classList.toggle('open');
+    menuButton.getAttribute('aria-expanded') == 'false' ? menuButton.setAttribute('aria-expanded', 'true') : menuButton.setAttribute('aria-expanded', 'false'); // add aceciblity to the button
     menuNav.classList.toggle('open')
 }
-
 function onResizePage(){
     if(!matchMedia('(max-width: 800px)').matches) resetMenu();
 }
