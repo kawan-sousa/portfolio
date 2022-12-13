@@ -9,11 +9,6 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-  width: 100vw;
-  overflow-x: hidden;
-}
-
 
 :root {
   --color-0: #fff;
@@ -29,11 +24,6 @@ body{
   --font-1: 'Bebas Neue', Arial, Helvetica, sans-serif;
   --font-2: 'Roboto', Arial, Helvetica, sans-serif;
   --border-size: 2px;
-}
-
-h1{
-  font-family: var(--font-0);
-  font-weight: 300;
 }
 
 p, h2, h3, h4, h5, h6{
@@ -201,36 +191,35 @@ header picture {
   width: 100%;
 }
 
-header #text {
-  position: absolute;
-  bottom: 0;
-  height: calc(98vh / 3);
-  text-align: center;
-  color: var(--color-0);
-}
-
 h1 {
+  font-family: var(--font-0);
+  font-weight: 300;
   font-size: 4rem;
   line-height: 4rem;
   text-transform: uppercase;
-  transform: translateY(-50%)!important;
+  position: absolute;
+  color: var(--color-0);
+  bottom: -2rem;
   transition-delay: .3s;
-  margin-bottom: 3vw;
   text-shadow: 0 7px 0px var(--color-2);
 }
 
 #about {
   display: inline-block;
   width: 60%;
+  text-align: center;
   color: var(--color-3);
   font-size: 1rem;
   line-height: 1.5em;
-  margin-bottom: 0.5rem;
+  position: absolute;
+  bottom: 2vw;
+  left: 20%;
 }
 
 /* main */
 
 main {
+  overflow-x: hidden;
   background-color: var(--color-4);
   padding-top: 7vw;
 }
@@ -792,8 +781,9 @@ footer {
 }
 
 @media all and (max-width: 800px) {
-  header #content #text #about {
+  #about {
     width: 95%;
+    left: 2.5%;
   }
 
   .contact-image {
@@ -888,14 +878,24 @@ footer {
   #gallery {
     grid-template-columns: 1fr;
   }
+  #about{
+    width: 80%;
+    left: 10%;
+  }
 }
 
 @media (max-width: 481px) {
   header {
-    height: 90vh;
+    height: 95vh;
   }
 
   h1 {
     font-size: 12vw;
+    text-shadow: none;
+  }
+
+  #about{
+    width: 90%;
+    left: 2.5%;
   }
 }
