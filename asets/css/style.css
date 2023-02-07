@@ -697,13 +697,17 @@ aside.contact-me {
   opacity: 1;
 }
 
-.contact-image {
+.contact-image-wppr {
+  position: relative;
   width: 40%;
   overflow: hidden;
 }
 
-.contact-image img {
-  height: 100%;
+.contact-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .social-network-wrpr {
