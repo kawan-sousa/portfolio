@@ -708,6 +708,8 @@ aside.contact-me {
   top: 0;
   left: 0;
   width: 100%;
+
+  will-change: transform;
 }
 
 .social-network-wrpr {

@@ -1,4 +1,4 @@
-const animateElList = document.querySelectorAll('[data-animation');
+const animateElList = document.querySelectorAll('[data-animation]');
 
 if(animateElList.length){
     window.addEventListener('scroll', ()=>{
