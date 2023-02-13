@@ -22,10 +22,12 @@ function setDefaltAttr(arrayObject){
     })
 }
 
-window.addEventListener('scroll', ()=>{    
-        paralaxElList.forEach((plxEl, i)=>{
+window.addEventListener('scroll', ()=>{
+        paralaxElList.forEach((plxEl)=>{
+            if(getOffsetBottom(plxEl.element) < 0){
+                plxEl.element.style.transform = 'translateY(0px)'
+            };
             const verticalMov = calcVerticalMov(plxEl)
-            console.log(verticalMov * sensibility)
             plxEl.element.style.transform = `translateY(-${verticalMov * sensibility}px)`;
         })
 })
@@ -36,3 +38,13 @@ function calcVerticalMov(plxEl){
     return plxEl.lastClientTop - currentCltTop;
 }
 
+function getOffsetBottom(el){
+    const parentEl = el.offsetParent;
+
+    // get transformY of element
+    const transform = window.getComputedStyle(el).transform;
+    const translateY = new DOMMatrix(transform).m42;
+
+    const bottom = el.offsetHeight - (parentEl.offsetHeight + translateY * -1)
+    return bottom
+}
