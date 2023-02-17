@@ -700,7 +700,7 @@ aside.contact-me {
 .contact-image-wppr {
   position: relative;
   width: 40%;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .contact-image {
@@ -904,4 +904,8 @@ footer {
     width: 95%;
     left: 2.5%;
   }
+}
+
+.filling{
+  height: 150vh;
 }
