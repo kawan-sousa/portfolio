@@ -13,17 +13,18 @@ window.addEventListener('scroll', onScroll)
 
 function onScroll(){
     paralaxList.forEach(obj=>{
-        let translateY = -getTranslateY(obj);
+        let translateY = getTranslateY(obj);
         
-        if(!checkInClient(obj.offsetParent) && obj.translateY == 0){
-            console.log('foi')
-            translateY = 0
+        if(!checkInClient(obj.offsetParent) && obj.getBoundingClientRect().top < 0){// if the elementWrapper is below the "client", the image has its start position defined (edge exposed on the Y-axis)
+            translateY = +obj.maxTranslateY;
+            console.log('below');
         }
-        else if(!checkInClient(obj.offsetParent)) translateY = obj.maxTranslateY;
-        else if(translateY >= obj.maxTranslateY){
-            translateY = obj.maxTranslateY;
+        else if(!checkInClient(obj.offsetParent) && obj.getBoundingClientRect().top > 0){//if the elementWrapper is above the "client", the image has its min translateY defined (negative valueedge exposed on the Y-axis)
+            translateY = 0;
+            console.log('above');
         }
 
+        console.log(translateY, '/', obj.maxTranslateY);
         obj.style.transform = `translateY(-${translateY}px)`;
         obj.translateY = translateY;
         obj.lastClientTop = obj.getBoundingClientRect().top;
@@ -38,7 +39,7 @@ function getTranslateY(obj){
     const vall = window.innerHeight / getExposedY(obj);
     const res = obj.translateY + (getMovY(obj) / vall);
 
-    return -res;
+    return res;
 }
 
 function getExposedY(obj){
