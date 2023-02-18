@@ -1,13 +1,18 @@
 const paralaxList = document.querySelectorAll('.paralax');
 
 //initialize the attributes
-paralaxList.forEach(obj=>{
+window.onload = function (){
+
+    paralaxList.forEach(obj=>{
     obj.sensibility = obj.getAttribute('plx-sensi');
     obj.translateY = 0;
     obj.maxTranslateY = getExposedY(obj);
     obj.minTranslateY = 0;
     obj.lastClientTop= obj.getBoundingClientRect().top;
-})
+    console.log('loaded', getExposedY(obj))
+    })
+}
+
 
 window.addEventListener('scroll', onScroll)
 
@@ -15,8 +20,9 @@ function onScroll(){
     paralaxList.forEach(obj=>{
         let translateY = getTranslateY(obj);
         
+        // if(!document.readyState === "complete") return;//if the page is not load this fiture not works
         if(!checkInClient(obj.offsetParent) && obj.getBoundingClientRect().top < 0){// if the elementWrapper is below the "client", the image has its start position defined (edge exposed on the Y-axis)
-            translateY = +obj.maxTranslateY;
+            translateY = obj.maxTranslateY;
             console.log('below');
         }
         else if(!checkInClient(obj.offsetParent) && obj.getBoundingClientRect().top > 0){//if the elementWrapper is above the "client", the image has its min translateY defined (negative valueedge exposed on the Y-axis)
@@ -26,6 +32,7 @@ function onScroll(){
 
         console.log(translateY, '/', obj.maxTranslateY);
         obj.style.transform = `translateY(-${translateY}px)`;
+        console.log('passou')
         obj.translateY = translateY;
         obj.lastClientTop = obj.getBoundingClientRect().top;
     })
@@ -46,6 +53,7 @@ function getExposedY(obj){
     const parentHeight = obj.offsetParent.offsetHeight;
     const objHeight = obj.offsetHeight;
 
+    console.log(objHeight, parentHeight, objHeight - parentHeight)
     return objHeight - parentHeight;
 }
 
