@@ -9,13 +9,18 @@ window.onload = function (){
     obj.maxTranslateY = getExposedY(obj);
     obj.minTranslateY = 0;
     obj.lastClientTop= obj.getBoundingClientRect().top;
-    console.log('loaded', getExposedY(obj))
+    window.addEventListener('scroll', onScroll);
+
     })
 }
 
+window.onresize = windowResize;
 
-window.addEventListener('scroll', onScroll)
-
+function windowResize(){// when the user resizes the window, a new value for max TranslateY is assigned;
+    paralaxList.forEach((obj)=>{
+        obj.maxTranslateY = getExposedY(obj);
+    })
+}
 function onScroll(){
     paralaxList.forEach(obj=>{
         let translateY = getTranslateY(obj);
@@ -23,16 +28,12 @@ function onScroll(){
         // if(!document.readyState === "complete") return;//if the page is not load this fiture not works
         if(!checkInClient(obj.offsetParent) && obj.getBoundingClientRect().top < 0){// if the elementWrapper is below the "client", the image has its start position defined (edge exposed on the Y-axis)
             translateY = obj.maxTranslateY;
-            console.log('below');
         }
         else if(!checkInClient(obj.offsetParent) && obj.getBoundingClientRect().top > 0){//if the elementWrapper is above the "client", the image has its min translateY defined (negative valueedge exposed on the Y-axis)
             translateY = 0;
-            console.log('above');
         }
-
-        console.log(translateY, '/', obj.maxTranslateY);
+        else if(translateY >= obj.maxTranslateY) translateY = obj.maxTranslateY;
         obj.style.transform = `translateY(-${translateY}px)`;
-        console.log('passou')
         obj.translateY = translateY;
         obj.lastClientTop = obj.getBoundingClientRect().top;
     })
@@ -53,7 +54,6 @@ function getExposedY(obj){
     const parentHeight = obj.offsetParent.offsetHeight;
     const objHeight = obj.offsetHeight;
 
-    console.log(objHeight, parentHeight, objHeight - parentHeight)
     return objHeight - parentHeight;
 }
 
@@ -62,5 +62,6 @@ function checkInClient(obj){
     const objHeight = obj.offsetHeight;
     const windowHeight = (window.innerHeight * 90) / 100;
     const isShowing = clientTop < windowHeight && clientTop > -objHeight;
+
     return isShowing;
 }
