@@ -4,7 +4,6 @@ const paralaxList = document.querySelectorAll('.paralax');
 window.onload = function (){
 
     paralaxList.forEach(obj=>{
-    obj.sensibility = obj.getAttribute('plx-sensi');
     obj.translateY = 0;
     obj.maxTranslateY = getExposedY(obj);
     obj.minTranslateY = 0;
@@ -30,7 +29,7 @@ function onScroll(){
             translateY = obj.maxTranslateY;
         }
         else if(!checkInClient(obj.offsetParent) && obj.getBoundingClientRect().top > 0){//if the elementWrapper is above the "client", the image has its min translateY defined (negative valueedge exposed on the Y-axis)
-            translateY = 0;
+            translateY = obj.minTranslateY;
         }
         else if(translateY >= obj.maxTranslateY) translateY = obj.maxTranslateY;
         obj.style.transform = `translateY(-${translateY}px)`;
